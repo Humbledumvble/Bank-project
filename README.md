@@ -29,10 +29,10 @@ Ao iniciar o programa, o usuário terá um menu com as opções:
 csharp
 Copiar
 Editar
-[1] Depósito
-[2] Saque
-[3] Extrato
-[0] Sair
+[d] Depósito
+[s] Saque
+[e] Extrato
+[q] Sair
 O usuário poderá selecionar a opção desejada e realizar as operações de forma sequencial.
 
 📚 Aprendizados
