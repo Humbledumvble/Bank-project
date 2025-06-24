@@ -1,2 +1,65 @@
-# Bank-project
-Bank project
+📦 Projeto Banco Simples
+Este é um projeto inicial de um sistema bancário simples, desenvolvido em Python, que permite ao usuário realizar operações básicas como:
+
+💰 Depósito
+
+💸 Saque
+
+📄 Extrato
+
+🚪 Sair
+
+O objetivo é exercitar conceitos fundamentais de lógica de programação, controle de fluxo, variáveis e funções.
+
+📋 Funcionalidades
+✅ Realizar depósitos com valor positivo
+✅ Realizar saques com limite de valor e número de saques diários
+✅ Consultar o extrato das operações realizadas
+✅ Encerrar a aplicação com a opção Sair
+
+🛠️ Tecnologias utilizadas
+Python 3.x
+
+📦 Como executar o projeto
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+Acesse a pasta do projeto:
+
+bash
+Copiar
+Editar
+cd nome-do-repositorio
+Execute o arquivo Python:
+
+bash
+Copiar
+Editar
+python banco.py
+📌 Requisitos
+Python 3 instalado em sua máquina.
+
+📑 Exemplo de uso
+Ao iniciar o programa, o usuário terá um menu com as opções:
+
+csharp
+Copiar
+Editar
+[1] Depósito
+[2] Saque
+[3] Extrato
+[0] Sair
+O usuário poderá selecionar a opção desejada e realizar as operações de forma sequencial.
+
+📚 Aprendizados
+✅ Manipulação de variáveis
+✅ Estruturas condicionais e de repetição
+✅ Criação de menus interativos no terminal
+✅ Registro de operações e controle de saldo
+
+✍️ Autor
+Desenvolvido por Augusto Custodio de Oliveira
+
