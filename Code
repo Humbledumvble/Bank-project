@@ -1,0 +1,49 @@
+menu = " [d] depositar\n [s] sacar\n [e] extrato\n [q] sair\n ==>"
+
+saldo = 0
+extrato = ""
+LIMITE = 500
+NUMERO_SAQUES = 0
+LIMITE_SAQUES = 3
+
+print("Bem-vindo ao Banco Santander!")
+
+while True:
+    if input(menu) == "d":
+        valor = float(input("Informe o valor do depósito: "))
+        if valor > 0:
+            saldo += valor
+            extrato += f"Depósito: R$ {valor:.2f}\n"
+        elif valor > 500:
+            print("Operação falhou! O valor do depósito não pode ser maior que R$ 500,00.")
+        else:
+            print("Operação falhou! O valor informado é inválido.")
+    if input(menu) == "s":
+        valor = float(input("Informe o valor do saque: "))
+        excedeu_saldo = valor > saldo
+        excedeu_limite = valor > LIMITE
+        excedeu_saques = NUMERO_SAQUES >= LIMITE_SAQUES
+
+        if excedeu_saldo:
+            print("Operação falhou! Você não tem saldo suficiente.")
+        elif excedeu_limite:
+            print("Operação falhou! O valor do saque não pode ser maior que R$ 500,00.")
+        elif excedeu_saques:
+            print("Operação falhou! Número máximo de saques diários atingido.")
+        elif valor > 0:
+            saldo -= valor
+            extrato += f"Saque: R$ {valor:.2f}\n"
+            NUMERO_SAQUES += 1
+        else:
+            print("Operação falhou! O valor informado é inválido.")
+    if input(menu) == "e":
+        print("\n================ EXTRATO ================")
+        if not extrato:
+            print("Não foram realizadas movimentações.")
+        else:
+            print(extrato)
+        print(f"\nSaldo: R$ {saldo:.2f}")
+        print("==========================================")
+    if input(menu) == "q":
+        print("Obrigado por utilizar nossos serviços!")
+        break
