@@ -18,27 +18,8 @@ O objetivo é exercitar conceitos fundamentais de lógica de programação, cont
 ✅ Encerrar a aplicação com a opção Sair
 
 🛠️ Tecnologias utilizadas
-Python 3.x
+Python 3.1
 
-📦 Como executar o projeto
-Clone o repositório:
-
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-Acesse a pasta do projeto:
-
-bash
-Copiar
-Editar
-cd nome-do-repositorio
-Execute o arquivo Python:
-
-bash
-Copiar
-Editar
-python banco.py
 📌 Requisitos
 Python 3 instalado em sua máquina.
 
