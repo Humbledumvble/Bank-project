@@ -1,5 +1,4 @@
-📦 Projeto Banco Simples
-Este é um projeto inicial de um sistema bancário simples, desenvolvido em Python, que permite ao usuário realizar operações básicas como:
+📦 Este é um projeto inicial de um sistema bancário simples, desenvolvido em Python, que permite ao usuário realizar operações básicas como:
 
 💰 Depósito
 
