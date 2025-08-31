@@ -1,4 +1,4 @@
-menu = " [d] depositar\n [s] sacar\n [e] extrato\n [q] sair\n ==>"
+menu = " [d] depositar\n [s] sacar\n [e] extrato\n [nc] nova conta\n [lc] listar contas\n [q] sair\n ==>"
 
 saldo = 0
 extrato = ""
@@ -6,10 +6,38 @@ LIMITE = 500
 NUMERO_SAQUES = 0
 LIMITE_SAQUES = 3
 
+# Lista para armazenar contas
+contas = []
+numero_conta = 1  # contador sequencial de contas
+
 print("Bem-vindo ao Banco Santander!")
 
+def criar_conta(usuario, contas, numero_conta):
+    """Cria uma nova conta e adiciona na lista de contas"""
+    conta = {
+        "agencia": "0001",
+        "numero_conta": numero_conta,
+        "usuario": usuario
+    }
+    contas.append(conta)
+    print("\n✅ Conta criada com sucesso!")
+    print(f"Agência: {conta['agencia']} | Conta: {conta['numero_conta']} | Usuário: {conta['usuario']}")
+    return numero_conta + 1  # retorna o próximo número de conta
+
+def listar_contas(contas):
+    """Exibe todas as contas cadastradas"""
+    if not contas:
+        print("\nNenhuma conta cadastrada.")
+        return
+    print("\n=========== CONTAS CADASTRADAS ===========")
+    for conta in contas:
+        print(f"Agência: {conta['agencia']} | Conta: {conta['numero_conta']} | Usuário: {conta['usuario']}")
+    print("==========================================")
+
 while True:
-    if input(menu) == "d":
+    opcao = input(menu)
+
+    if opcao == "d":
         valor = float(input("Informe o valor do depósito: "))
         if valor > 0:
             saldo += valor
@@ -18,7 +46,8 @@ while True:
             print("Operação falhou! O valor do depósito não pode ser maior que R$ 500,00.")
         else:
             print("Operação falhou! O valor informado é inválido.")
-    if input(menu) == "s":
+
+    elif opcao == "s":
         valor = float(input("Informe o valor do saque: "))
         excedeu_saldo = valor > saldo
         excedeu_limite = valor > LIMITE
@@ -36,7 +65,8 @@ while True:
             NUMERO_SAQUES += 1
         else:
             print("Operação falhou! O valor informado é inválido.")
-    if input(menu) == "e":
+
+    elif opcao == "e":
         print("\n================ EXTRATO ================")
         if not extrato:
             print("Não foram realizadas movimentações.")
@@ -44,6 +74,17 @@ while True:
             print(extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("==========================================")
-    if input(menu) == "q":
+
+    elif opcao == "nc":
+        usuario = input("Informe o nome do usuário: ")
+        numero_conta = criar_conta(usuario, contas, numero_conta)
+
+    elif opcao == "lc":
+        listar_contas(contas)
+
+    elif opcao == "q":
         print("Obrigado por utilizar nossos serviços!")
         break
+
+    else:
+        print("Operação inválida, por favor selecione novamente.")
